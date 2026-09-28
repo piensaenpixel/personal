@@ -1,0 +1,158 @@
+# yaml-language-server: $schema=https://unpkg.com/@sveltia/cms/schema/sveltia-cms.json
+# Configuración del panel de administración (Sveltia CMS).
+# El panel edita la rama «staging»; para pasar los cambios a la web pública
+# se lanza el workflow «Publicar staging en la web» en GitHub Actions.
+
+backend:
+  name: github
+  repo: piensaenpixel/personal
+  branch: staging
+  # URL del servicio de login (sveltia-cms-auth en Cloudflare Workers).
+  base_url: https://sveltia-cms-auth.piensaenpixel.workers.dev
+
+site_url: https://piensaenpixel.es/staging/photos/
+display_url: https://piensaenpixel.es/staging/photos/
+logo_url: https://piensaenpixel.es/img/favicon.svg
+
+media_folder: img/fotos
+public_folder: img/fotos
+
+slug:
+  encoding: ascii
+  clean_accents: true
+
+collections:
+  - name: photos
+    label: Photos
+    label_singular: Photo
+    folder: content/photos
+    extension: json
+    format: json
+    create: true
+    slug: "{{slug}}"
+    identifier_field: title
+    summary: "{{title}} — {{category}}"
+    thumbnail: src
+    sortable_fields: [order, title, date, category]
+    view_groups:
+      - label: Series
+        field: category
+    fields:
+      - { name: title, label: Title, widget: string }
+      - name: category
+        label: Series
+        widget: relation
+        collection: series
+        value_field: "{{slug}}"
+        display_fields: [name]
+        search_fields: [name]
+      - { name: src, label: Image, widget: image, hint: "JPG recommended. Large files are resized to 2000 px when publishing." }
+      - { name: mockup, label: On the wall, widget: image, required: false, hint: "Optional second image showing the print in a room. If set, the photo page shows a two-image carousel." }
+      - { name: description, label: Description, widget: text, required: false }
+      - { name: date, label: Date, widget: datetime, format: YYYY-MM-DD, date_format: DD/MM/YYYY, time_format: false, required: false }
+      - name: location
+        label: Location
+        widget: object
+        collapsed: true
+        fields:
+          - { name: name, label: Place, widget: string, required: false }
+          - { name: lat, label: Latitude, widget: number, value_type: float, required: false, hint: "Leave empty to hide the map" }
+          - { name: lng, label: Longitude, widget: number, value_type: float, required: false }
+      - name: exif
+        label: Technical data
+        widget: object
+        collapsed: true
+        fields:
+          - { name: camera, label: Camera, widget: string, required: false }
+          - { name: lens, label: Lens, widget: string, required: false }
+          - { name: focal, label: Focal length, widget: string, required: false, hint: "e.g. 600 mm" }
+          - { name: aperture, label: Aperture, widget: string, required: false, hint: "e.g. f/8" }
+          - { name: shutter, label: Shutter, widget: string, required: false, hint: "e.g. 1/250 s" }
+          - { name: iso, label: ISO, widget: string, required: false }
+      - { name: featured, label: Featured on the home page, widget: boolean, default: false }
+      - { name: forSale, label: Available as a print, widget: boolean, default: true }
+      - { name: sizes, label: Print sizes, widget: list, required: false, hint: "Only for this photo. Leave empty to use the default sizes from Settings." }
+      - { name: order, label: Order, widget: number, value_type: int, required: false, hint: "Lower numbers appear first" }
+      - { name: unsplashId, label: Unsplash ID, widget: string, required: false, hint: "Filled in by the Unsplash import; leave as is" }
+
+  - name: series
+    label: Series
+    label_singular: Series
+    folder: content/series
+    extension: json
+    format: json
+    create: true
+    slug: "{{slug}}"
+    identifier_field: name
+    summary: "{{name}}"
+    sortable_fields: [order, name]
+    fields:
+      - { name: name, label: Name, widget: string }
+      - { name: intro, label: Intro, widget: text, required: false }
+      - { name: order, label: Order, widget: number, value_type: int, required: false }
+
+  - name: courses
+    label: Courses
+    label_singular: Course
+    folder: content/courses
+    extension: json
+    format: json
+    create: true
+    slug: "{{slug}}"
+    identifier_field: title
+    summary: "{{title}} — {{price}}"
+    sortable_fields: [order, title]
+    fields:
+      - { name: title, label: Title, widget: string }
+      - { name: format, label: Format, widget: string, hint: "e.g. In the field, one day" }
+      - { name: duration, label: Duration, widget: string, required: false }
+      - { name: level, label: Level, widget: string, required: false }
+      - { name: where, label: Where, widget: string, required: false }
+      - { name: next, label: Next dates, widget: string, required: false }
+      - { name: price, label: Price, widget: string, required: false }
+      - { name: group, label: Group size, widget: string, required: false }
+      - { name: summary, label: Summary, widget: text, required: false }
+      - { name: learn, label: You will learn, widget: list, required: false }
+      - { name: order, label: Order, widget: number, value_type: int, required: false }
+
+  - name: settings
+    label: Settings
+    files:
+      - name: landing
+        label: Home page (piensaenpixel.es)
+        file: content/landing.json
+        fields:
+          - { name: domain, label: Custom domain, widget: string, required: false, hint: "e.g. piensaenpixel.es. Leave empty until the DNS records point to GitHub." }
+          - { name: name, label: Name, widget: string }
+          - { name: role, label: Role · place, widget: string, required: false, hint: "e.g. Director of Product Design · Madrid, Spain" }
+          - { name: intro, label: Summary, widget: text, required: false }
+          - { name: email, label: Email, widget: string, required: false }
+          - { name: linkedin, label: LinkedIn URL, widget: string, required: false }
+          - { name: cv, label: CV (PDF), widget: file, required: false, media_folder: img, public_folder: img, hint: "Optional. Adds a CV link that opens the PDF." }
+          - name: experience
+            label: Experience
+            widget: list
+            required: false
+            summary: "{{fields.title}} — {{fields.company}}"
+            fields:
+              - { name: from, label: From, widget: string, hint: "e.g. Sep 2025" }
+              - { name: to, label: To, widget: string, hint: "e.g. Now" }
+              - { name: place, label: Place, widget: string, required: false }
+              - { name: title, label: Title, widget: string }
+              - { name: company, label: Company, widget: string }
+              - { name: description, label: Description, widget: text, required: false }
+      - name: site
+        label: Photo site
+        file: content/site.json
+        fields:
+          - { name: name, label: Site name, widget: string }
+          - { name: author, label: Author, widget: string }
+          - { name: tagline, label: Tagline, widget: string, required: false }
+          - { name: location, label: Location, widget: string, required: false, hint: "Shown on the home page" }
+          - { name: email, label: Contact email, widget: string }
+          - { name: formspreeId, label: Formspree form ID, widget: string, required: false, hint: "Leave empty to use the visitor's email app" }
+          - { name: instagram, label: Instagram URL, widget: string, required: false }
+          - { name: unsplash, label: Unsplash URL, widget: string, required: false }
+          - { name: portrait, label: Portrait, widget: image, required: false, hint: "Shown on the About page; if empty, a vertical photo is used" }
+          - { name: printSizes, label: Default print sizes, widget: list, hint: "Width × height for landscape photos; swapped automatically for portrait ones" }
+          - { name: about, label: About paragraphs, widget: list, field: { name: text, label: Paragraph, widget: text } }

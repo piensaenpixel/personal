@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" data-env="staging">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>piensaenpixel — Photography</title>
+  <meta name="description" content="Landscape, moon, drone and night photography. Limited-edition prints available.">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:title" content="piensaenpixel — Photography">
+  <meta property="og:description" content="Landscape, moon, drone and night photography.">
+  <meta property="og:image" content="img/fotos/paisaje_1.jpg">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@500;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("theme");
+        if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="css/style.css?v=59e71273">
+  <meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+  <div class="loader" id="loader" aria-hidden="true">
+    <p class="loader__name"><span>piensaenpixel</span></p>
+    <p class="loader__sub"><span>Photography — Madrid</span></p>
+    <div class="loader__bar"><i></i></div>
+  </div>
+  <div class="cursor" id="cursor" aria-hidden="true"><span class="cursor__label" id="cursor-label"></span></div>
+
+  <main id="app" class="app" tabindex="-1"></main>
+
+  <div class="bar" id="bar">
+    <a class="bar__brand" href="../">©<span id="year"></span> piensaenpixel</a>
+    <button class="bar__menu" id="menu-btn" aria-expanded="false" aria-controls="menu"><span data-open>Menu</span><span data-close hidden>Close</span></button>
+  </div>
+
+  <div class="menu" id="menu" hidden>
+    <nav class="menu__nav" aria-label="Menu">
+      <a href="#/"><small>S00</small>Home</a>
+      <a href="#/gallery/landscape"><small>S01</small>Landscape</a>
+      <a href="#/gallery/moon"><small>S02</small>Moon</a>
+      <a href="#/gallery/drone"><small>S03</small>Drone</a>
+      <a href="#/gallery/night"><small>S04</small>Night</a>
+      <a href="#/about"><small>S05</small>About</a>
+      <a href="#/courses"><small>S06</small>Courses</a>
+      <a href="#/contact"><small>S07</small>Contact</a>
+    </nav>
+    <div class="menu__foot">
+      <div class="menu__row"><span>Home:</span><span><a href="../">piensaenpixel.es</a></span></div>
+      <div class="menu__row"><span>Social:</span><span><a href="https://www.instagram.com/piensaenpixel/" target="_blank" rel="noopener">Instagram</a><br><a href="https://unsplash.com/@piensaenpixel" target="_blank" rel="noopener">Unsplash</a></span></div>
+      <div class="menu__row menu__row--theme"><span>Theme:</span><button class="menu__theme" id="theme-btn" type="button"><span data-theme-label>Light</span></button></div>
+    </div>
+  </div>
+
+  <noscript><p class="noscript">This site needs JavaScript to show the gallery.</p></noscript>
+
+  <script src="js/data.js?v=59e71273"></script>
+  <script src="js/app.js?v=59e71273"></script>
+</body>
+</html>

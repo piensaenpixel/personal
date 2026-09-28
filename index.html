@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Emilio García — <p class="role fade">Director of Product Design · Madrid, Spain</p></title>
+  <meta name="description" content="21 years in product design and front-end engineering. I&#x27;ve led design at Onum, Eventbrite and CARTO, and worked on observability, data and security products. Currently Director of Product Design at CrowdStrike.">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" href="photos/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg: #fff; --ink: #000; --muted: #6f6f6f; --line: #d4d4d4; --gutter: clamp(20px, 2.6vw, 40px); --bar-h: 56px; --ease: cubic-bezier(0.22, 1, 0.36, 1); }
+    @media (prefers-color-scheme: dark) { :root { --bg: #121212; --ink: #e8e8e8; --muted: #8f8f8f; --line: #2c2c2c; } }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { background: var(--bg); color: var(--ink); }
+    body { margin: 0; min-height: 100svh; font-family: "Geist", "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.5; background: var(--bg); color: var(--ink); padding: calc(var(--gutter) * 1.2) var(--gutter) calc(var(--bar-h) + 32px); -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    .mono { font-family: "Geist Mono", "JetBrains Mono", Menlo, monospace; font-size: 13px; text-transform: uppercase; }
+    .top { display: flex; justify-content: space-between; gap: 24px; }
+    .top a, .bar a, .links a { position: relative; }
+    .top a::after, .bar a::after, .links a::after { content: ""; position: absolute; left: 0; right: 0; bottom: -2px; height: 1px; background: currentColor; transform: scaleX(0); transform-origin: right; transition: transform 0.45s var(--ease); }
+    .top a:hover::after, .bar a:hover::after, .links a:hover::after { transform: scaleX(1); transform-origin: left; }
+    main { max-width: 860px; padding: clamp(56px, 12vh, 140px) 0 0; }
+    h1 { margin: 0; font-weight: 700; font-size: clamp(44px, 7vw, 96px); line-height: 0.95; letter-spacing: -0.035em; text-transform: uppercase; }
+    .w { display: inline-block; overflow: hidden; vertical-align: bottom; padding: 0.04em 0.04em 0.1em 0.02em; margin: -0.04em -0.04em -0.1em -0.02em; }
+    .w__i { display: inline-block; transform: translateY(110%); animation: up 1s var(--ease) forwards; animation-delay: var(--d, 0ms); }
+    @keyframes up { to { transform: none; } }
+    .role { margin: 20px 0 0; font-size: 18px; }
+    .links { margin: 12px 0 0; color: var(--muted); }
+    .links a { color: var(--ink); }
+    hr { border: 0; border-top: 1px solid var(--ink); margin: 36px 0; }
+    .intro { max-width: 62ch; margin: 0; font-size: 17px; line-height: 1.55; }
+    .exp { margin: clamp(48px, 8vh, 80px) 0 0; }
+    .exp h2 { margin: 0 0 8px; font-weight: 400; color: var(--muted); }
+    .job { display: grid; grid-template-columns: 180px 1fr; gap: 24px; padding: 22px 0; border-top: 1px solid var(--line); }
+    .job:last-child { border-bottom: 1px solid var(--line); }
+    .job__when { color: var(--muted); line-height: 1.6; }
+    .job h3 { margin: 0; font-size: 18px; font-weight: 700; line-height: 1.3; }
+    .job__co { margin: 2px 0 0; color: var(--muted); }
+    .job__desc { margin: 10px 0 0; max-width: 60ch; }
+    .fade { opacity: 0; animation: fade 1s var(--ease) forwards; }
+    .fade:nth-of-type(2) { animation-delay: 0.1s; } .fade:nth-of-type(3) { animation-delay: 0.2s; } .fade:nth-of-type(4) { animation-delay: 0.3s; } .fade:nth-of-type(5) { animation-delay: 0.4s; } .fade:nth-of-type(6) { animation-delay: 0.5s; }
+    @keyframes fade { to { opacity: 1; } }
+    .bar { position: fixed; left: 0; right: 0; bottom: 0; height: calc(var(--bar-h) + 56px); display: flex; justify-content: space-between; align-items: flex-end; padding: 0 var(--gutter) calc((var(--bar-h) - 20px) / 2); color: var(--ink); pointer-events: none; background: linear-gradient(to top, var(--bg) 0%, var(--bg) var(--bar-h), transparent 100%); }
+    .bar > * { pointer-events: auto; line-height: 20px; }
+    :root[data-env="staging"] .bar span::before { content: "Staging · "; }
+    @media (max-width: 640px) { .job { grid-template-columns: 1fr; gap: 6px; } }
+    @media (prefers-reduced-motion: reduce) { .w__i, .fade { animation: none; transform: none; opacity: 1; } }
+  </style>
+</head>
+<body>
+  <header class="top mono">
+    <a href="./">piensaenpixel</a>
+  </header>
+  <main>
+    <h1><span class="w"><span class="w__i" style="--d:0ms">Emilio</span></span> <span class="w"><span class="w__i" style="--d:70ms">García</span></span></h1>
+    <p class="role fade">Director of Product Design · Madrid, Spain</p>
+    <p class="links mono fade"><a href="mailto:piensaenpixel@gmail.com">Email</a> · <a href="https://www.linkedin.com/in/piensaenpixel/" target="_blank" rel="noopener">LinkedIn</a></p>
+    <hr class="fade">
+    <p class="intro fade">21 years in product design and front-end engineering. I&#x27;ve led design at Onum, Eventbrite and CARTO, and worked on observability, data and security products. Currently Director of Product Design at CrowdStrike.</p>
+    <section class="exp fade"><h2 class="mono">Experience</h2><article class="job"><div class="job__when">Sep 2025 — Now<br>Madrid</div><div class="job__what"><h3>Director of Product Design</h3><p class="job__co">CrowdStrike</p></div></article><article class="job"><div class="job__when">Mar 2022 — Oct 2025<br>Madrid</div><div class="job__what"><h3>VP of Design · Founding Designer</h3><p class="job__co">Onum</p><p class="job__desc">First designer. Defined product, design and brand with the CEO and engineering, then built and led the design team.</p></div></article><article class="job"><div class="job__when">Sep 2020 — Sep 2023<br>Remote</div><div class="job__what"><h3>Principal Product Designer</h3><p class="job__co">New Relic</p></div></article><article class="job"><div class="job__when">Nov 2018 — Sep 2020<br>Madrid</div><div class="job__what"><h3>Product Design Manager</h3><p class="job__co">Eventbrite</p></div></article><article class="job"><div class="job__when">Mar 2014 — Nov 2018<br>Madrid</div><div class="job__what"><h3>Head of Design</h3><p class="job__co">CARTO</p><p class="job__desc">Mapping and data visualization tool. Head of Design 2017–2018; UI designer and developer 2014–2017.</p></div></article><article class="job"><div class="job__when">May 2011 — Mar 2014<br>Madrid</div><div class="job__what"><h3>Senior UI Developer</h3><p class="job__co">Tuenti</p><p class="job__desc">Front-end for Tuenti Móvil, the company&#x27;s mobile carrier.</p></div></article><article class="job"><div class="job__when">Sep 2009 — May 2011<br>Madrid</div><div class="job__what"><h3>Design Lead</h3><p class="job__co">Vocento</p><p class="job__desc">Regional newspapers: new sections and event sites.</p></div></article></section>
+  </main>
+  <div class="bar mono"><span>©2026 piensaenpixel</span><a href="photos/">Photos →</a></div>
+</body>
+</html>
