@@ -1,5 +1,5 @@
 {
-  "domain": "",
+  "domain": "piensaenpixel.es",
   "name": "Emilio García",
   "role": "Director of Product Design · Madrid, Spain",
   "intro": "21 years in product design and front-end engineering. I've led design at Onum, Eventbrite and CARTO, and worked on observability, data and security products. Currently Director of Product Design at CrowdStrike.",
@@ -7,12 +7,61 @@
   "linkedin": "https://www.linkedin.com/in/piensaenpixel/",
   "cv": "",
   "experience": [
-    { "from": "Sep 2025", "to": "Now", "place": "Madrid", "title": "Director of Product Design", "company": "CrowdStrike", "description": "" },
-    { "from": "Mar 2022", "to": "Oct 2025", "place": "Madrid", "title": "VP of Design · Founding Designer", "company": "Onum", "description": "First designer. Defined product, design and brand with the CEO and engineering, then built and led the design team." },
-    { "from": "Sep 2020", "to": "Sep 2023", "place": "Remote", "title": "Principal Product Designer", "company": "New Relic", "description": "" },
-    { "from": "Nov 2018", "to": "Sep 2020", "place": "Madrid", "title": "Product Design Manager", "company": "Eventbrite", "description": "" },
-    { "from": "Mar 2014", "to": "Nov 2018", "place": "Madrid", "title": "Head of Design", "company": "CARTO", "description": "Mapping and data visualization tool. Head of Design 2017–2018; UI designer and developer 2014–2017." },
-    { "from": "May 2011", "to": "Mar 2014", "place": "Madrid", "title": "Senior UI Developer", "company": "Tuenti", "description": "Front-end for Tuenti Móvil, the company's mobile carrier." },
-    { "from": "Sep 2009", "to": "May 2011", "place": "Madrid", "title": "Design Lead", "company": "Vocento", "description": "Regional newspapers: new sections and event sites." }
+    {
+      "from": "Sep 2025",
+      "to": "Now",
+      "place": "Madrid",
+      "title": "Director of Product Design",
+      "company": "CrowdStrike",
+      "description": ""
+    },
+    {
+      "from": "Mar 2022",
+      "to": "Oct 2025",
+      "place": "Madrid",
+      "title": "VP of Design · Founding Designer",
+      "company": "Onum",
+      "description": "First designer. Defined product, design and brand with the CEO and engineering, then built and led the design team."
+    },
+    {
+      "from": "Sep 2020",
+      "to": "Sep 2023",
+      "place": "Remote",
+      "title": "Principal Product Designer",
+      "company": "New Relic",
+      "description": ""
+    },
+    {
+      "from": "Nov 2018",
+      "to": "Sep 2020",
+      "place": "Madrid",
+      "title": "Product Design Manager",
+      "company": "Eventbrite",
+      "description": ""
+    },
+    {
+      "from": "Mar 2014",
+      "to": "Nov 2018",
+      "place": "Madrid",
+      "title": "Head of Design",
+      "company": "CARTO",
+      "description": "Mapping and data visualization tool. Head of Design 2017–2018; UI designer and developer 2014–2017."
+    },
+    {
+      "from": "May 2011",
+      "to": "Mar 2014",
+      "place": "Madrid",
+      "title": "Senior UI Developer",
+      "company": "Tuenti",
+      "description": "Front-end for Tuenti Móvil, the company's mobile carrier."
+    },
+    {
+      "from": "Sep 2009",
+      "to": "May 2011",
+      "place": "Madrid",
+      "title": "Design Lead",
+      "company": "Vocento",
+      "description": "Regional newspapers: new sections and event sites."
+    }
   ]
 }

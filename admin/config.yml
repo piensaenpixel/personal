@@ -10,9 +10,9 @@ backend:
   # URL del servicio de login (sveltia-cms-auth en Cloudflare Workers).
   base_url: https://sveltia-cms-auth.piensaenpixel.workers.dev
 
-site_url: https://piensaenpixel.github.io/personal/staging/photos/
-display_url: https://piensaenpixel.github.io/personal/staging/photos/
-logo_url: https://piensaenpixel.github.io/personal/img/favicon.svg
+site_url: https://piensaenpixel.es/staging/photos/
+display_url: https://piensaenpixel.es/staging/photos/
+logo_url: https://piensaenpixel.es/img/favicon.svg
 
 media_folder: img/fotos
 public_folder: img/fotos

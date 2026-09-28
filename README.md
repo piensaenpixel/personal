@@ -2,7 +2,7 @@
 
 Portfolio fotográfico estático (HTML, CSS y JavaScript sin dependencias ni build) pensado para publicarse en GitHub Pages.
 
-**Web:** https://piensaenpixel.github.io/personal/
+**Web:** https://piensaenpixel.es/
 
 ## Qué tiene
 
@@ -38,11 +38,11 @@ Al publicar, el script `scripts/build_data.py` junta esos archivos en `js/data.j
 
 ## Panel de administración (CMS)
 
-El panel está en **https://piensaenpixel.github.io/personal/photos/admin/** (con el dominio, `https://piensaenpixel.es/photos/admin/`) y usa [Sveltia CMS](https://github.com/sveltia/sveltia-cms). Entras con tu cuenta de GitHub y editas fotos, series, cursos y ajustes con formularios; al guardar, hace el commit en la rama `staging`.
+El panel está en **https://piensaenpixel.es/photos/admin/** (con el dominio, `https://piensaenpixel.es/photos/admin/`) y usa [Sveltia CMS](https://github.com/sveltia/sveltia-cms). Entras con tu cuenta de GitHub y editas fotos, series, cursos y ajustes con formularios; al guardar, hace el commit en la rama `staging`.
 
 **Flujo de trabajo**
 
-1. Editas en el panel → se guarda en `staging` → en un par de minutos lo ves en **https://piensaenpixel.github.io/personal/staging/photos/** (lleva la marca «Staging» en la barra y los buscadores no la indexan).
+1. Editas en el panel → se guarda en `staging` → en un par de minutos lo ves en **https://piensaenpixel.es/staging/photos/** (lleva la marca «Staging» en la barra y los buscadores no la indexan).
 2. Cuando te guste, publicas: en GitHub, pestaña **Actions → «Publicar staging en la web» → Run workflow**. Eso pasa los cambios a `main` y regenera la web pública.
 
 **Configuración inicial (una sola vez, unos 10 minutos)**
@@ -53,7 +53,7 @@ El panel necesita un pequeño servicio de login para GitHub. Es gratuito:
 2. Entra en https://github.com/sveltia/sveltia-cms-auth y pulsa el botón **Deploy to Cloudflare Workers**. Al terminar tendrás una URL del tipo `https://sveltia-cms-auth.TU-USUARIO.workers.dev`.
 3. En GitHub: **Settings → Developer settings → OAuth Apps → New OAuth App**. Rellena:
    - Application name: `piensaenpixel admin`
-   - Homepage URL: `https://piensaenpixel.github.io/personal/`
+   - Homepage URL: `https://piensaenpixel.es/`
    - Authorization callback URL: `https://sveltia-cms-auth.TU-USUARIO.workers.dev/callback`
    Guarda, copia el **Client ID** y genera un **Client secret** (cópialo también).
 4. En Cloudflare, abre el worker → **Settings → Variables and Secrets** y añade:
@@ -62,7 +62,7 @@ El panel necesita un pequeño servicio de login para GitHub. Es gratuito:
    - `ALLOWED_DOMAINS` = `piensaenpixel.github.io`
 5. La URL del worker (`https://sveltia-cms-auth.piensaenpixel.workers.dev`) ya está en `admin/config.yml`.
 
-A partir de ahí, https://piensaenpixel.github.io/personal/admin/ te pedirá entrar con GitHub y ya está.
+A partir de ahí, https://piensaenpixel.es/admin/ te pedirá entrar con GitHub y ya está.
 
 ## Importar fotos desde Unsplash
 
